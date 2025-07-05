@@ -1,5 +1,5 @@
 on:
-  workflow_call:
+  workflow_dispatch:
   schedule:
     - cron: "23 03 * * *"
   push:
