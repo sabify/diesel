@@ -63,9 +63,9 @@ harness = false
 
 [features]
 default = []
-postgres = ["diesel/postgres", "wtx/postgres"]
+postgres = ["diesel/postgres"]
 sqlite = ["diesel/sqlite"]
-mysql = ["diesel/mysql", "wtx/mysql"]
+mysql = ["diesel/mysql"]
 sqlx-bench = ["sqlx", "tokio", "sqlx/runtime-tokio-rustls"]
 instruction_count = ["criterion-perf-events", "perfcnt"]
 fast_run = []
