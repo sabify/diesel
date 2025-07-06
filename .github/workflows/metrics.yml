@@ -68,10 +68,10 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
       - name: Run Benchmarks (Postgres)
         if: matrix.backend == 'postgres'
-        run: cargo +stable update && cargo +stable bench --no-fail-fast --manifest-path diesel_bench/Cargo.toml --no-default-features --features "postgres sqlx-bench sqlx/postgres rust_postgres tokio_postgres futures futures-util sea-orm sea-orm/sqlx-postgres criterion/async_tokio serde diesel-async diesel-async/postgres wtx wtx/postgres wtx/rand_chacha"
+        run: cargo +stable update && cargo +stable bench --no-fail-fast --manifest-path diesel_bench/Cargo.toml --no-default-features --features "postgres sqlx-bench sqlx/postgres rust_postgres tokio_postgres futures futures-util sea-orm sea-orm/sqlx-postgres criterion/async_tokio serde diesel-async diesel-async/postgres wtx wtx/postgres"
       - name: Run Benchmarks (Mysql)
         if: matrix.backend == 'mysql'
-        run: cargo +stable update && cargo +stable bench --no-fail-fast --manifest-path diesel_bench/Cargo.toml --no-default-features --features "mysql sqlx-bench sqlx/mysql tokio rustorm rustorm/with-mysql rustorm_dao rust_mysql futures sea-orm sea-orm/sqlx-mysql criterion/async_tokio serde diesel-async diesel-async/mysql wtx wtx/mysql wtx/rand_chacha"
+        run: cargo +stable update && cargo +stable bench --no-fail-fast --manifest-path diesel_bench/Cargo.toml --no-default-features --features "mysql sqlx-bench sqlx/mysql tokio rustorm rustorm/with-mysql rustorm_dao rust_mysql futures sea-orm sea-orm/sqlx-mysql criterion/async_tokio serde diesel-async diesel-async/mysql wtx wtx/mysql"
       - name: Push metrics
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
